@@ -1,0 +1,83 @@
+Webruntime.define('lwc/reactivityInLWC', ['lwc'], function (lwc) { 'use strict';
+
+   function tmpl($api, $cmp, $slotset, $ctx) {
+     const {
+       b: api_bind,
+       h: api_element,
+       t: api_text,
+       d: api_dynamic
+     } = $api;
+     const {
+       _m0
+     } = $ctx;
+     return [api_element("button", {
+       attrs: {
+         "title": "Change Property",
+         "label": "'Change Prop"
+       },
+       key: 0,
+       on: {
+         "click": _m0 || ($ctx._m0 = api_bind($cmp.clickHandler))
+       }
+     }, []), api_element("h5", {
+       key: 1
+     }, [api_text("Object Not tracked : "), api_dynamic($cmp.noTrackObj.fname)]), api_dynamic($cmp.str)];
+   }
+
+   var _tmpl = lwc.registerTemplate(tmpl);
+   tmpl.stylesheets = [];
+   tmpl.stylesheetTokens = {
+     hostAttribute: "lwc-reactivityInLWC_reactivityInLWC-host",
+     shadowAttribute: "lwc-reactivityInLWC_reactivityInLWC"
+   };
+
+   function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? Object(arguments[i]) : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+
+   function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+   class ReactivityInLWC extends lwc.LightningElement {
+     constructor(...args) {
+       super(...args);
+       this.str = 'gg';
+       this.noTrackObj = {
+         fname: 'Shubham'
+       };
+       this.trackObj = {
+         fname: 'Shubham'
+       };
+     }
+
+     // track decorator is used . Object properties are also tracked. 
+     //When manipulating complex types like objects and arrays we must create a new object and assign it to the field for the change to be detected.
+     // called upon clicking a button
+     clickHandler() {
+       this.noTrackObj.fname = 'name Changed'; // does not re-render the component. Since the object properties are not tracked.
+
+       this.trackObj.fname = 'name Changed in track property'; // re-render the component
+
+       this.trackObj.newprop = 'new property added'; // does not re-render the component since the existing object is not modified.
+       //To rerender your component when adding a new property, assign the object to a new object with both values(new & old).
+
+       this.trackObj = _objectSpread({}, this.trackObj, {
+         newprop: 'new prop added along with existing properties'
+       }); // re-render the component
+
+       this.str = 'gggg';
+     }
+
+   }
+
+   lwc.registerDecorators(ReactivityInLWC, {
+     track: {
+       trackObj: 1
+     },
+     fields: ["str", "noTrackObj"]
+   });
+
+   var reactivityInLWC = lwc.registerComponent(ReactivityInLWC, {
+     tmpl: _tmpl
+   });
+
+   return reactivityInLWC;
+
+});

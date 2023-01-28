@@ -1,0 +1,14 @@
+<template>
+    <lightning-card>
+            <!--parent to child communication-->
+
+        <lightning-button variant="neutral" label="parent to child" onclick={parentToChild}></lightning-button>
+        
+    </lightning-card>
+
+
+            <!--child to parent communication-->
+    <c-child class="slds-text-align_left slds-text-color_red" onchildevent={handleChildEvent}  child-property={message}></c-child>
+    From child: {dataFromChild}
+
+</template>

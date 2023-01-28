@@ -1,0 +1,1 @@
+{"errors":[{"filename":"d:\\Training\\SalesForce\\LightingWebComponents\\LWC basics\\force-app\\main\\default\\lwc\\createRecordController\\createRecordController.html","location":{"line":3,"column":5,"start":56,"length":17},"code":"","message":"layoutType=\"Full\" is not valid attribute for lightning-record-form. All attributes name should be all lowercase."}]}

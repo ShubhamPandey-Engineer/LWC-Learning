@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>channelOne</masterLabel>
+    <isExposed>true</isExposed>
+    <description>LMS to communicate message within lightning exp.</description>
+
+    <lightningMessageFields>
+        <fieldName>messageToSend</fieldName>
+        <description>The message that has to be send to components</description>
+    </lightningMessageFields>
+
+</LightningMessageChannel>

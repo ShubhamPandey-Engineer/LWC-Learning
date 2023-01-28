@@ -1,0 +1,23 @@
+<template>
+    <div class="sdls_col  sdls-size_12-of-12">
+        <lightning-layout-item class="sdls_col  sdls-size_12-of-12">
+            <lightning-input label="Object Name" >
+               
+            </lightning-input>
+            <lightning-button onclick ={getInfo} label="Get object Info"></lightning-button>
+        </lightning-layout-item>
+        </div>
+
+        
+        <div>
+        <lightning-layout-item class="sdls_col  sdls-size_12-of-12" > 
+                <h4>{objectName }  Data</h4>
+                <div class="">
+                    {getData}
+                </div>
+            
+        </lightning-layout-item></div>
+
+
+       
+</template>

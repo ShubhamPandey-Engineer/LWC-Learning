@@ -1,0 +1,1 @@
+{"errors":[{"filename":"d:\\Training\\SalesForce\\LightingWebComponents\\LWC basics\\force-app\\main\\default\\lwc\\reactivityInLWC\\reactivityInLWC.html","location":{"line":11,"column":4,"start":263,"length":28},"code":"","message":"Invalid directive \"$lwc:ref\" on element <div>."}]}

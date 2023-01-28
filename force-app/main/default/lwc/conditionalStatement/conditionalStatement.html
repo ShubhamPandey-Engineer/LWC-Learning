@@ -1,0 +1,17 @@
+<template>
+
+    <h4>conditional rendering</h4>
+
+    <div class=""  if:true={isTrue}>
+        <h4 class="">Your sync data is</h4>
+    </div>
+
+    <div class=""  if:false={isTrue}>
+        <h4 class="">sync not enabled</h4>
+    </div>
+
+
+
+<lightning-input label="Enable sync:" type="checkbox" onchange={onChange}></lightning-input>
+
+</template>

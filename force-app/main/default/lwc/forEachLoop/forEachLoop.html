@@ -1,0 +1,23 @@
+<template>
+    <lightning-formatted-text value="For each loop"></lightning-formatted-text>
+    <table class="slds-table slds-table_cell-buffer slds-table_bordered" >
+        <tr >
+         <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
+        <template for:each={students} for:item="student">
+            <tr key={student.id}>
+                <td>{student.id}</td>
+                <td>student.name</td>
+                <td>{student.email}</td>
+            </tr>
+
+
+        </template>
+
+    </table>
+
+    
+   
+</template>

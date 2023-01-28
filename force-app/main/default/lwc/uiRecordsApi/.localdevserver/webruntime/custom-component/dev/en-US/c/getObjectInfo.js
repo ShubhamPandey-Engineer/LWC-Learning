@@ -1,0 +1,1 @@
+{"errors":[{"filename":"d:\\Training\\SalesForce\\LightingWebComponents\\LWC basics\\force-app\\main\\default\\lwc\\uiRecordsApi\\force-app\\main\\default\\lwc\\getObjectInfo\\getObjectInfo.html","location":{"line":3,"column":5,"start":25,"length":18},"code":"","message":"<lightning-layout> has no matching closing tag."}]}
